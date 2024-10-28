@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <app-sidebar class="col-auto" [class.sidebar-collapsed]="isSidebarClosed" (toggle)="handleSidebarToggle($event)"></app-sidebar>
+    <main class="col" [class.main-expanded]="isSidebarClosed">
+      <app-dashboard (settingsEvent)="openSettingsModal()"></app-dashboard>
+    </main>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="settingsModalLabel">Ajustes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Settings Form -->
+        <form>
+          <div class="mb-3">
+            <label for="ajuste1" class="form-label">Ajuste 1</label>
+            <input type="text" class="form-control" id="ajuste1">
+          </div>
+          <div class="mb-3">
+            <label for="ajuste2" class="form-label">Ajuste 2</label>
+            <input type="text" class="form-control" id="ajuste2">
+          </div>
+          <div class="mb-3">
+            <label for="ajuste3" class="form-label">Ajuste 3</label>
+            <input type="text" class="form-control" id="ajuste3">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar Cambois</button>
+      </div>
+    </div>
+  </div>
+</div>
